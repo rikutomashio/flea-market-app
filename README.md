@@ -82,7 +82,7 @@ DB_PASSWORD=laravel_pass
 php artisan migrate
 7. ストレージリンク
 php artisan storage:link
-8.（任意）シーディング
+8. （任意）シーディング
 ※初期データを投入する場合のみ実行
 php artisan db:seed
 ## テスト
