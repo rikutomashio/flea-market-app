@@ -104,31 +104,32 @@ categories
 category_product（中間テーブル）
 
 # 画面一覧
+
 ## 画面URL
 
-1.	商品一覧画面（トップ）	/
+商品一覧画面（トップ）	/
    
-2.	商品一覧（マイリスト）	/?tab=mylist
+商品一覧（マイリスト）	/?tab=mylist
 
-3.	会員登録	/register
+会員登録	/register
 
-4.	ログイン	/login
+ログイン	/login
 
-5.	商品詳細	/item/{item_id}
+商品詳細	/item/{item_id}
 
-6.  商品購入	/purchase/{item_id}
+商品購入	/purchase/{item_id}
 
-7.  送付先住所変更	/purchase/address/{item_id}
+送付先住所変更	/purchase/address/{item_id}
 
-8. 	商品出品	/sell
+商品出品	/sell
 
-9.  マイページ	/mypage
+マイページ	/mypage
 
-10.  プロフィール編集	/mypage/profile
+プロフィール編集	/mypage/profile
+  
+購入商品一覧	/mypage?page=buy
 
-11.  購入商品一覧	/mypage?page=buy
-
-12.  出品商品一覧	/mypage?page=sell
+出品商品一覧	/mypage?page=sell
 
 
 ## 工夫した点
