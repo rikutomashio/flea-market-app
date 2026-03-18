@@ -60,27 +60,28 @@ Laravel Fortify（認証）
 Stripe（決済）
 
 ## 環境構築
-① リポジトリをクローン
+1. リポジトリをクローン
 git clone https://github.com/<ユーザー名>/<リポジトリ名>.git
-cd <プロジェクト名>
-② 依存関係インストール
+cd <リポジトリ名>
+2. Docker起動
+docker-compose up -d --build
+3. PHPコンテナに入る
+docker-compose exec php bash
+4. Laravel初期設定
 composer install
-npm install
-npm run dev
-③ 環境変数設定
 cp .env.example .env
 php artisan key:generate
-④ DB設定
-
-.env に以下を設定
-
-DB_DATABASE=xxxx
-DB_USERNAME=xxxx
-DB_PASSWORD=xxxx
-⑤ マイグレーション
+5. DB設定（.env）
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+6. マイグレーション
 php artisan migrate
-⑥ 起動
-php artisan serve
+7. ストレージリンク
+php artisan storage:link
 # テスト
 php artisan test
 
@@ -104,13 +105,13 @@ category_product（中間テーブル）
 
 ## 画面一覧
 画面	URL
-商品一覧	/
-商品詳細	/item/{id}
-ログイン	/login
-会員登録	/register
-マイページ	/mypage
-出品	/sell
-プロフィール編集	/mypage/profile
+1.商品一覧	/
+2.商品詳細	/item/{id}
+3.ログイン	/login
+4.会員登録	/register
+5.マイページ	/mypage
+6.出品	/sell
+7.プロフィール編集	/mypage/profile
 
 ## 工夫した点
 
