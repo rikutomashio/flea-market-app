@@ -10,7 +10,7 @@
 本アプリはLaravelを用いて開発したフリマアプリです。
 ユーザーは商品を出品・購入でき、いいねやコメント機能を通じて他ユーザーと交流できます。
 
-## 主な機能
+# 主な機能
 ## 商品関連
 
 商品一覧表示
@@ -82,7 +82,7 @@ DB_PASSWORD=laravel_pass
 php artisan migrate
 7. ストレージリンク
 php artisan storage:link
-# テスト
+## テスト
 php artisan test
 
 ## テーブル構成
@@ -103,15 +103,33 @@ categories
 
 category_product（中間テーブル）
 
-## 画面一覧
-画面	URL
-1.商品一覧	/
-2.商品詳細	/item/{id}
-3.ログイン	/login
-4.会員登録	/register
-5.マイページ	/mypage
-6.出品	/sell
-7.プロフィール編集	/mypage/profile
+# 画面一覧
+## 画面URL
+
+1.	商品一覧画面（トップ）	/
+   
+2.	商品一覧（マイリスト）	/?tab=mylist
+
+3.	会員登録	/register
+
+4.	ログイン	/login
+
+5.	商品詳細	/item/{item_id}
+
+6.  商品購入	/purchase/{item_id}
+
+7.  送付先住所変更	/purchase/address/{item_id}
+
+8. 	商品出品	/sell
+
+9.  マイページ	/mypage
+
+10.  プロフィール編集	/mypage/profile
+
+11.  購入商品一覧	/mypage?page=buy
+
+12.  出品商品一覧	/mypage?page=sell
+
 
 ## 工夫した点
 
