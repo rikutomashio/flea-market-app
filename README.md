@@ -65,8 +65,8 @@ FormRequest：バリデーション処理をコントローラから分離し、
 
 ## 環境構築
 1. リポジトリをクローン
-git clone https://github.com/<ユーザー名>/<リポジトリ名>.git
-cd <リポジトリ名>
+git clone https://github.com/rikutomashio/flea-market-app.git
+cd flea-market-app
 2. Docker起動
 docker-compose up -d --build
 3. PHPコンテナに入る
