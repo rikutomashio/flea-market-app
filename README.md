@@ -66,27 +66,37 @@ FormRequest：バリデーション処理をコントローラから分離し、
 ## 環境構築
 1. リポジトリをクローン
 git clone https://github.com/rikutomashio/flea-market-app.git
+
 cd flea-market-app
-2. Docker起動
+3. Docker起動
 docker-compose up -d --build
-3. PHPコンテナに入る
+4. PHPコンテナに入る
 docker-compose exec php bash
-4. Laravel初期設定
+5. Laravel初期設定
+
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
-5. DB設定（.env）
+
+6. DB設定（.env）
 DB_CONNECTION=mysql
+
 DB_HOST=mysql
+
 DB_PORT=3306
+
 DB_DATABASE=laravel_db
+
 DB_USERNAME=laravel_user
+
 DB_PASSWORD=laravel_pass
-6. マイグレーション
+7. マイグレーション
 php artisan migrate
-7. ストレージリンク
+8. ストレージリンク
 php artisan storage:link
-8. （任意）シーディング
+9. （任意）シーディング
 ※初期データを投入する場合のみ実行
 php artisan db:seed
 ## テスト
