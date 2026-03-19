@@ -64,13 +64,14 @@ Mailtrap：メール認証機能の動作確認に使用
 FormRequest：バリデーション処理をコントローラから分離し、可読性と保守性を向上
 
 ## 環境構築
-1. リポジトリをクローン
+
+1.リポジトリをクローン
 
 git clone https://github.com/rikutomashio/flea-market-app.git
 
 cd flea-market-app
 
-2. Docker起動
+2.Docker起動
 
 docker-compose up -d --build
 
