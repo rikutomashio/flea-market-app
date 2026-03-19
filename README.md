@@ -76,11 +76,11 @@ cd flea-market-app
 docker-compose up -d --build
 
 
-3. PHPコンテナに入る
+3.PHPコンテナに入る
 
 docker-compose exec php bash
 
-4. Laravel初期設定
+4.Laravel初期設定
 
 composer install
 
@@ -88,7 +88,7 @@ cp .env.example .env
 
 php artisan key:generate
 
-5. DB設定（.env）
+5.DB設定（.env）
 
 DB_CONNECTION=mysql
 
@@ -102,15 +102,15 @@ DB_USERNAME=laravel_user
 
 DB_PASSWORD=laravel_pass
 
-6. マイグレーション
+6.マイグレーション
 
 php artisan migrate
 
-7. ストレージリンク
+7.ストレージリンク
 
 php artisan storage:link
 
-8. （任意）シーディング
+8.（任意）シーディング
 
 ※初期データを投入する場合のみ実行
 php artisan db:seed
