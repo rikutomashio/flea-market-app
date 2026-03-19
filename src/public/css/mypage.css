@@ -1,0 +1,146 @@
+/* 全体 */
+.mypage-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* プロフィール */
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-edit-btn {
+    font-size: 14px;
+    color: #3490dc;
+    text-decoration: none;
+}
+
+.profile-edit-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* タブ */
+.mypage-tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.mypage-tab {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+}
+
+.mypage-tab.active {
+    border-bottom: 3px solid #3490dc;
+    font-weight: bold;
+    color: #000;
+}
+
+
+/* タイトル */
+.mypage-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* 商品一覧 */
+.mypage-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.mypage-product a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.mypage-product a:hover {
+    text-decoration: underline;
+}
+
+
+/* 右側情報 */
+.product-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+/* SOLD */
+.mypage-sold {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* 空表示 */
+.empty-message {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}
+
+
+/* ページネーション */
+.pagination-area {
+    margin-top: 20px;
+}
+
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+
+    .profile-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mypage-product {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .product-meta {
+        flex-wrap: wrap;
+    }
+}

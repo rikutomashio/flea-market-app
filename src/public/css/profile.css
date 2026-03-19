@@ -1,0 +1,118 @@
+/* コンテナ */
+.profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+/* カード化（重要） */
+.profile-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* タイトル */
+.profile-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* フォーム */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 入力グループ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 入力欄 */
+.form-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* ファイル */
+.file-input {
+    margin-top: 10px;
+}
+
+/* 画像エリア */
+.profile-image-area {
+    text-align: center;
+}
+
+/* 画像 */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* ボタン */
+.profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: #e3342f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+}
+
+.btn-secondary {
+    background: #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+}
+
+/* エラー */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* 成功 */
+.success-message {
+    text-align: center;
+    color: green;
+    margin-bottom: 15px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .profile-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}

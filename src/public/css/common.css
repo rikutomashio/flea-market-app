@@ -1,0 +1,122 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ========================
+   Buttons
+======================== */
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* メインボタン */
+
+.btn-primary {
+    background: #3490dc;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #2779bd;
+}
+
+/* サブボタン */
+
+.btn-secondary {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* 成功ボタン */
+
+.btn-success {
+    background: #38c172;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #2fa360;
+}
+
+.success-message {
+    background: #e6ffed;
+    color: #2f855a;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* 危険ボタン */
+
+.btn-danger {
+    background: #e3342f;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #cc1f1a;
+}
+
+/* エラー */
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}

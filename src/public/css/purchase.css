@@ -1,0 +1,88 @@
+/* 購入画面レイアウト */
+
+.purchase-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+
+/* 商品エリア */
+
+.purchase-item {
+    text-align: center;
+}
+
+.purchase-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+}
+
+.purchase-name {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.purchase-price {
+    font-size: 18px;
+    color: #666;
+}
+
+
+/* フォーム */
+
+.purchase-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* 住所 */
+
+.address-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
+/* 支払い方法 */
+
+.payment-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+/* 購入ボタン */
+
+.purchase-form .btn {
+    margin-top: 10px;
+}
+
+
+/* SOLD */
+
+.sold-text {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* 戻るリンク */
+
+.back-link {
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+
+    .purchase-page {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,107 @@
+/* コンテナ */
+.sell-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+/* カード化（最重要） */
+.sell-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* タイトル */
+.sell-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* フォーム */
+.sell-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* グループ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ラベル */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* 入力 */
+.form-input,
+.form-textarea,
+.form-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* フォーカス */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #3490dc;
+}
+
+/* テキストエリア */
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ファイル */
+.file-input {
+    padding: 6px;
+}
+
+/* カテゴリ（ここ改善ポイント） */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.category-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ボタン（最重要） */
+.sell-button {
+    width: 100%;
+    background: #e3342f;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sell-button:hover {
+    opacity: 0.9;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}

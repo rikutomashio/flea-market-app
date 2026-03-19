@@ -1,0 +1,141 @@
+/* 商品詳細レイアウト */
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* 商品画像 */
+
+.product-detail-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.product-detail-image {
+    text-align: center;
+}
+
+
+/* 商品情報 */
+
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* 商品名 */
+
+.detail-product-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* 価格 */
+
+.detail-product-price {
+    font-size: 20px;
+    color: #666;
+}
+
+
+/* お気に入り */
+
+.favorite-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.favorite-area {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* SOLD */
+
+.sold-text {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* 商品説明 */
+
+.product-description {
+    margin-bottom: 30px;
+}
+
+
+/* コメント */
+
+.comment-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.comment-box strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.comment-box p {
+    color: #444;
+}
+
+/* コメントフォーム */
+
+.comment-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #3490dc;
+}
+
+.comment-submit {
+    align-self: flex-start;
+}
+
+.purchase-area {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail-image img {
+        max-width: 100%;
+    }
+
+}

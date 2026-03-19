@@ -1,0 +1,46 @@
+/* コンテナ */
+
+.login-container {
+    max-width: 500px;
+    margin: 60px auto;
+}
+
+
+/* タイトル */
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+/* フォーム */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-form .btn {
+    width: 100%;
+}
+
+
+/* 会員登録リンク */
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+    .login-container {
+        padding: 0 15px;
+    }
+
+}
