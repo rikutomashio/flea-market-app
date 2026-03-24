@@ -109,13 +109,39 @@ DB_PASSWORD=laravel_pass
 
 ※.envのDB設定を必ず上記の内容に変更してください
 
-6.マイグレーション（シーディングも含めて）
+6.メール認証設定（Mailtrap）
+
+本アプリではメール認証機能にMailtrapを使用しています。
+
+ Mailtrapにアクセスし、アカウントを作成してください  
+   https://mailtrap.io/
+
+ Inboxを作成し、「SMTP Settings」を開きます
+
+ 表示されているSMTP情報をコピーし、.envに以下を設定してください
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=ご自身のユーザー名
+MAIL_PASSWORD=ご自身のパスワード
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=test@example.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+ 設定後、以下コマンドを実行してください
+
+php artisan config:clear
+
+ 認証メールはMailtrapのInbox上で確認できます
+
+7.マイグレーション（シーディングも含めて）
 
 php artisan migrate:fresh --seed 
 
 ※既存データを削除して初期状態から構築されます
 
-7.ストレージリンク
+8.ストレージリンク
 
 php artisan storage:link
 
