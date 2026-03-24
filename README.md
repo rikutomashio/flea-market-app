@@ -95,8 +95,6 @@ php artisan key:generate
 
 5.DB設定（.env）
 
-※.envのDB設定を必ず上記の内容に変更してください
-
 DB_CONNECTION=mysql
 
 DB_HOST=mysql
@@ -108,6 +106,8 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 
 DB_PASSWORD=laravel_pass
+
+※.envのDB設定を必ず上記の内容に変更してください
 
 6.マイグレーション（シーディングも含めて）
 
