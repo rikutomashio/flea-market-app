@@ -135,13 +135,34 @@ php artisan config:clear
 
  認証メールはMailtrapのInbox上で確認できます
 
-7.マイグレーション（シーディングも含めて）
+7.Stripe設定
+
+本アプリではStripeを利用した決済機能を実装しています。
+
+Stripeにアクセスしアカウントを作成
+
+https://stripe.com/
+
+ダッシュボードからAPIキーを取得
+
+.envに以下を設定
+
+STRIPE_KEY=ご自身の公開キー  
+STRIPE_SECRET=ご自身のシークレットキー  
+
+設定後、以下コマンドを実行
+
+php artisan config:clear
+
+※本アプリではテストモードを使用しています
+
+8.マイグレーション（シーディングも含めて）
 
 php artisan migrate:fresh --seed 
 
 ※既存データを削除して初期状態から構築されます
 
-8.ストレージリンク
+9.ストレージリンク
 
 php artisan storage:link
 
