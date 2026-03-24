@@ -2,6 +2,9 @@
 
 ## URL
 - 開発環境：http://localhost/
+
+※ブラウザで http://localhost/ にアクセスしてください
+
 - phpMyAdmin：http://localhost:8080/
 
 
@@ -10,6 +13,7 @@
 本アプリはLaravelを用いて開発したフリマアプリです。
 ユーザーは商品を出品・購入でき、いいねやコメント機能を通じて他ユーザーと交流できます。
 ※本アプリはDocker環境での動作を前提としています
+※Docker Desktopがインストールされている必要があります
 
 # 主な機能
 ## 商品関連
@@ -105,7 +109,9 @@ DB_PASSWORD=laravel_pass
 
 6.マイグレーション（シーディングも含めて）
 
-php artisan migrate:fresh --seed ※既存データを削除して初期状態から構築されます
+php artisan migrate:fresh --seed 
+
+※既存データを削除して初期状態から構築されます
 
 7.ストレージリンク
 
@@ -137,6 +143,8 @@ php artisan storage:link
 6. コメントが投稿できることを確認
 
 7. 商品を出品できることを確認
+
+   ※出品した商品は別ユーザーでログインすると購入可能です
 
 8. 商品を購入できることを確認（Stripeテスト）
 
@@ -210,6 +218,8 @@ category_product（中間テーブル）
 ## 注意事項
 
 Stripeはテストモードで動作します
+
+※Stripeはテストモードのため実際の決済は行われません
 
 画像アップロードはstorage配下に保存されます
 
