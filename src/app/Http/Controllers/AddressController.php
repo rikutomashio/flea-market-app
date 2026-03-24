@@ -42,6 +42,18 @@ class AddressController extends Controller
                      ->with('success', '住所が更新されました');
 }
 
+    public function destroy(Address $address)
+{
+    // 自分の住所かチェック（重要）
+    if ($address->user_id !== auth()->id()) {
+        abort(403);
+    }
+
+    $address->delete();
+
+    return back()->with('success', '住所を削除しました');
+}
+
     public function setDefault(Address $address)
     {
         $user = auth()->user();

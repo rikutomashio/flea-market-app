@@ -47,6 +47,7 @@ class ProfileRequest extends FormRequest
             'image'    => ':attributeは画像ファイルを選択してください。',
             'mimes'    => ':attributeはjpeg, png形式でアップロードしてください。',
             'unique'   => 'この:attributeはすでに使用されています。',
+            'regex'    => ':attributeの形式が正しくありません。', // ★追加
         ];
     }
 

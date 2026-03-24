@@ -128,14 +128,15 @@
 <textarea name="content"
           class="comment-textarea"
           rows="4"
-          placeholder="コメントを書く..."
-          required>{{ old('content') }}</textarea>
+          placeholder="コメントを書く...">{{ old('content') }}</textarea>
+
+@error('content')
+    <div class="error-message">{{ $message }}</div>
+@enderror
 
 <button type="submit"
         class="btn btn-primary comment-submit">
-
-コメントする
-
+    コメントする
 </button>
 
 </form>

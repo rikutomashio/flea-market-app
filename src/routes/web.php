@@ -50,6 +50,8 @@ Route::middleware('auth')->group(function () {
     // 住所変更
     Route::get('/purchase/address/{product}', [AddressController::class, 'edit'])->name('purchase.address.edit');
     Route::post('/address', [AddressController::class, 'update'])->name('address.update');
+    Route::delete('/addresses/{address}', [AddressController::class, 'destroy'])
+    ->name('addresses.destroy');
     Route::patch('/addresses/{address}/default', [AddressController::class, 'setDefault'])->name('addresses.setDefault');
     // Stripeチェックアウト（カード決済用）
     Route::get('/stripe/checkout', function() {

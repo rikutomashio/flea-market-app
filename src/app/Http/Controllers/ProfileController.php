@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -44,6 +45,8 @@ class ProfileController extends Controller
     }
 
     $user->save();
+
+    Auth::setUser($user);
 
     $defaultAddress = $user->addresses()->where('is_default', true)->first();
 

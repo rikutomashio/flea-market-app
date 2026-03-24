@@ -22,7 +22,7 @@ public function rules()
         'image' => ['required', 'image', 'mimes:jpeg,png'],
         'category_ids' => ['required', 'array'],
         'category_ids.*' => ['exists:categories,id'],
-        'condition' => ['required', 'in:new,good,fair,poor'],
+        'condition' => ['required', 'in:1,2,3'],
         'price' => ['required', 'numeric', 'min:0'],
     ];
 }

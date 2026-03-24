@@ -14,7 +14,11 @@
     <div class="purchase-item">
 
         @if($product->image_path)
-            <img src="{{ $product->image_path }}" alt="{{ $product->name }}" class="purchase-image">
+            @if(Str::startsWith($product->image_path, 'http'))
+                <img src="{{ $product->image_path }}" alt="{{ $product->name }}" class="purchase-image">
+            @else
+                <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}" class="purchase-image">
+            @endif
         @else
             <p>画像はありません。</p>
         @endif
@@ -40,8 +44,14 @@
     <form method="POST" action="{{ route('purchase.store', $product) }}">
     @csrf
 
-        {{-- 住所 --}}
+        {{-- =========================
+            配送先
+        ========================== --}}
         <h3>配送先</h3>
+
+        @error('address_id')
+            <div class="error-message">{{ $message }}</div>
+        @enderror
 
         @foreach ($addresses as $address)
 
@@ -51,8 +61,7 @@
                 <input type="radio"
                        name="address_id"
                        value="{{ $address->id }}"
-                       {{ $address->is_default ? 'checked' : '' }}
-                       required>
+                       {{ old('address_id', optional($addresses->firstWhere('is_default', true))->id) == $address->id ? 'checked' : '' }}>
 
                 〒{{ $address->postal_code }}
                 {{ $address->prefecture }}
@@ -74,22 +83,33 @@
         @endforeach
 
 
-        {{-- 支払い方法 --}}
+        {{-- =========================
+            支払い方法
+        ========================== --}}
         <h3>支払い方法</h3>
 
-        <select name="payment_method" required class="payment-select">
-            <option value="convenience">コンビニ支払い</option>
-            <option value="card">カード支払い</option>
+        <select name="payment_method" class="payment-select">
+            <option value="">選択してください</option>
+            <option value="convenience" {{ old('payment_method') == 'convenience' ? 'selected' : '' }}>
+                コンビニ支払い
+            </option>
+            <option value="card" {{ old('payment_method') == 'card' ? 'selected' : '' }}>
+                カード支払い
+            </option>
         </select>
 
+        @error('payment_method')
+            <div class="error-message">{{ $message }}</div>
+        @enderror
 
+
+        {{-- =========================
+            ボタン
+        ========================== --}}
         @if($addresses->count() > 0)
 
-        <button type="submit"
-        class="btn btn-primary">
-
-        Stripe Checkout に進む
-
+        <button type="submit" class="btn btn-primary">
+            Stripe Checkout に進む
         </button>
 
         @else
@@ -113,9 +133,7 @@
 <div class="back-link">
 <a href="{{ route('products.show', $product) }}"
    class="btn btn-secondary">
-
 ← 商品詳細に戻る
-
 </a>
 </div>
 

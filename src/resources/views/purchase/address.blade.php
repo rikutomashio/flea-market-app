@@ -11,13 +11,14 @@
     {{-- タイトル --}}
     <h2 class="address-title">送付先住所の管理</h2>
 
-    {{-- メッセージ --}}
+    {{-- 成功メッセージ --}}
     @if(session('success'))
     <div class="success-message">
         {{ session('success') }}
     </div>
     @endif
 
+    {{-- エラーメッセージ（セッション） --}}
     @if(session('error'))
     <div class="error-message">
         {{ session('error') }}
@@ -26,7 +27,7 @@
 
 
     {{-- =========================
-        ① 登録済み住所（カード）
+        ① 登録済み住所
     ========================== --}}
     <div class="address-card">
 
@@ -61,19 +62,33 @@
                     <td>
                         @if(!$address->is_default)
                         <form
-                        action="{{ route('addresses.setDefault', $address) }}"
-                        method="POST"
-                        class="inline-form">
+                            action="{{ route('addresses.setDefault', $address) }}"
+                            method="POST"
+                            class="inline-form">
 
-                        @csrf
-                        @method('PATCH')
+                            @csrf
+                            @method('PATCH')
 
-                        <button type="submit" class="btn-secondary small">
-                            デフォルトにする
-                        </button>
+                            <button type="submit" class="btn-secondary small">
+                                デフォルトにする
+                            </button>
 
                         </form>
                         @endif
+
+                        {{-- ★ 削除ボタン（ここに追加） --}}
+                        <form action="{{ route('addresses.destroy', $address) }}"
+                            method="POST"
+                            class="inline-form">
+
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn-danger small">
+                                削除
+                            </button>
+
+    </form>
                     </td>
                 </tr>
                 @endforeach
@@ -88,45 +103,91 @@
 
 
     {{-- =========================
-        ② 新規追加（カード）
+        ② 新規住所追加
     ========================== --}}
     <div class="address-card">
 
         <h3 class="address-subtitle">新しい住所を追加</h3>
 
-        <form method="POST" action="{{ route('address.update') }}" class="address-form">
-        @csrf
+        {{-- ★ novalidate追加 --}}
+        <form method="POST"
+            action="{{ route('address.update') }}"
+            class="address-form"
+            novalidate>
 
-        <input type="hidden" name="product_id" value="{{ $product->id }}">
+            @csrf
 
-        <div class="form-group">
-            <label>郵便番号</label>
-            <input type="text" name="postal_code" class="form-input" required>
-        </div>
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-        <div class="form-group">
-            <label>都道府県</label>
-            <input type="text" name="prefecture" class="form-input" required>
-        </div>
+            {{-- 郵便番号 --}}
+            <div class="form-group">
+                <label>郵便番号</label>
+                <input type="text"
+                    name="postal_code"
+                    value="{{ old('postal_code') }}"
+                    class="form-input">
 
-        <div class="form-group">
-            <label>市区町村</label>
-            <input type="text" name="city" class="form-input" required>
-        </div>
+                @error('postal_code')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
 
-        <div class="form-group">
-            <label>番地</label>
-            <input type="text" name="street" class="form-input" required>
-        </div>
+            {{-- 都道府県 --}}
+            <div class="form-group">
+                <label>都道府県</label>
+                <input type="text"
+                    name="prefecture"
+                    value="{{ old('prefecture') }}"
+                    class="form-input">
 
-        <div class="form-group">
-            <label>建物名</label>
-            <input type="text" name="building" class="form-input">
-        </div>
+                @error('prefecture')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
 
-        <button type="submit" class="btn-primary">
-            登録する
-        </button>
+            {{-- 市区町村 --}}
+            <div class="form-group">
+                <label>市区町村</label>
+                <input type="text"
+                    name="city"
+                    value="{{ old('city') }}"
+                    class="form-input">
+
+                @error('city')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- 番地 --}}
+            <div class="form-group">
+                <label>番地</label>
+                <input type="text"
+                    name="street"
+                    value="{{ old('street') }}"
+                    class="form-input">
+
+                @error('street')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- 建物名 --}}
+            <div class="form-group">
+                <label>建物名</label>
+                <input type="text"
+                    name="building"
+                    value="{{ old('building') }}"
+                    class="form-input">
+
+                @error('building')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- ボタン --}}
+            <button type="submit" class="btn-primary">
+                登録する
+            </button>
 
         </form>
 
