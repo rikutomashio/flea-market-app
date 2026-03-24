@@ -131,7 +131,7 @@ php artisan storage:link
 
 ## 動作確認手順
 
-1. トップページにアクセス（http://localhost/）
+1. トップページにアクセス（http://localhost）
 
 2. 「ログイン」から以下のアカウントでログイン
    - test1@example.com / password
